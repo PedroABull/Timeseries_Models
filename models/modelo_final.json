@@ -1,0 +1,74 @@
+{
+    "modelo": "SARIMAX",
+    "data_corte": "2018-08-19",
+    "treinado_em": "2026-11-04T21:25:42",
+    "janelas_backtest": [
+        "2018-04-30",
+        "2018-05-28",
+        "2018-06-25",
+        "2018-07-23"
+    ],
+    "metricas_backtest": {
+        "MAE": 46.1,
+        "RMSE": 57.91,
+        "WMAPE (%)": 19.04,
+        "Erro total (%)": 5.31
+    },
+    "configuracoes": {
+        "horizonte": 28,
+        "eventos": [
+            "feriado",
+            "black_friday",
+            "pos_black_friday",
+            "fim_de_ano",
+            "greve_caminhoneiros"
+        ],
+        "features_ml": [
+            "month",
+            "day_of_week",
+            "day_of_month",
+            "lag_28",
+            "lag_35",
+            "lag_42",
+            "rolling_mean_7_lag28",
+            "rolling_mean_28_lag28",
+            "feriado",
+            "black_friday",
+            "pos_black_friday",
+            "fim_de_ano",
+            "greve_caminhoneiros"
+        ],
+        "arima": {
+            "order": [
+                2,
+                1,
+                2
+            ]
+        },
+        "sarima": {
+            "order": [
+                1,
+                1,
+                1
+            ],
+            "seasonal_order": [
+                0,
+                1,
+                1,
+                7
+            ]
+        },
+        "xgboost": {
+            "learning_rate": 0.05,
+            "random_state": 42,
+            "max_depth": 5,
+            "n_estimators": 200
+        },
+        "lightgbm": {
+            "learning_rate": 0.05,
+            "random_state": 42,
+            "max_depth": 2,
+            "n_estimators": 200
+        }
+    }
+}
